@@ -36,7 +36,7 @@ const formattedText = text.replace(/\|/g, '\n');
     const maxWidth = 900;      // wrap width
     const lineHeight = 1.05;   // tighter luxury vibe
 
-    const html = `
+    cconst html = `
 <!doctype html>
 <html>
 <head>
@@ -68,24 +68,15 @@ const formattedText = text.replace(/\|/g, '\n');
     color: #ffffff;
     text-align: center;
     width: ${maxWidth}px;
-    word-wrap: break-word;
     white-space: pre-wrap;
     text-transform: uppercase;
+    letter-spacing: 2px;
   }
 </style>
 </head>
 <body>
   <div class="wrap">
-    <div style="
-  font-family: 'Picaflor';
-  font-size: 40px;
-  color: white;
-  text-align: center;
-  letter-spacing: 2px;
-  line-height: 1.2;
-  max-width: 70%;
- white-space: pre-wrap;
-${formattedText}
+    <div class="text">${formattedText}</div>
   </div>
 </body>
 </html>`;
@@ -116,6 +107,7 @@ ${formattedText}
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
 
