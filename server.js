@@ -75,7 +75,16 @@ app.get("/render", async (req, res) => {
 </head>
 <body>
   <div class="wrap">
-    <div class="text">${text}</div>
+    <div style="
+  font-family: 'Picaflor';
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  max-width: 80%;
+">
+  ${text}
   </div>
 </body>
 </html>`;
@@ -106,5 +115,6 @@ app.get("/render", async (req, res) => {
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
