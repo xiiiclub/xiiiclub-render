@@ -29,6 +29,7 @@ app.get("/render", async (req, res) => {
 
     // Keep it simple: uppercase on server side
     const text = escapeHtml(textRaw.toUpperCase());
+const formattedText = text.replace(/\\n/g, '\n');
 
     // Tweak these to taste
     const fontSize = 40;      // base size
@@ -77,14 +78,15 @@ app.get("/render", async (req, res) => {
   <div class="wrap">
     <div style="
   font-family: 'Picaflor';
-  font-size: 40px;
+  font-size: 60px;
   color: white;
   text-align: center;
   letter-spacing: 2px;
   line-height: 1.2;
   max-width: 80%;
+  white-space: pre-wrap;
 ">
-  ${text}
+  ${formattedText}
   </div>
 </body>
 </html>`;
@@ -115,6 +117,7 @@ app.get("/render", async (req, res) => {
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
 
