@@ -32,7 +32,7 @@ app.get("/render", async (req, res) => {
 const formattedText = text.replace(/\|/g, '\n');
 
     // Tweak these to taste
-    const fontSize = 32;      // base size
+    const fontSize = 36;      // base size
     const maxWidth = 900;      // wrap width
     const lineHeight = 1.05;   // tighter luxury vibe
 
@@ -107,6 +107,7 @@ const formattedText = text.replace(/\|/g, '\n');
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
 
