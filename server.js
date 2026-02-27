@@ -31,7 +31,7 @@ app.get("/render", async (req, res) => {
     const text = escapeHtml(textRaw.toUpperCase());
 
     // Tweak these to taste
-    const fontSize = 50;      // base size
+    const fontSize = 40;      // base size
     const maxWidth = 900;      // wrap width
     const lineHeight = 1.05;   // tighter luxury vibe
 
@@ -106,4 +106,5 @@ app.get("/render", async (req, res) => {
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
