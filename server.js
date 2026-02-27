@@ -29,7 +29,7 @@ app.get("/render", async (req, res) => {
 
     // Keep it simple: uppercase on server side
     const text = escapeHtml(textRaw.toUpperCase());
-const formattedText = text.replace(/\\n/g, '\n');
+const formattedText = text.replace(/\|/g, '\n');
 
     // Tweak these to taste
     const fontSize = 40;      // base size
@@ -84,9 +84,8 @@ const formattedText = text.replace(/\\n/g, '\n');
   letter-spacing: 2px;
   line-height: 1.2;
   max-width: 70%;
-  white-space: pre-wrap;
-">
-  ${formattedText}
+ white-space: pre-wrap;
+${formattedText}
   </div>
 </body>
 </html>`;
@@ -117,6 +116,7 @@ const formattedText = text.replace(/\\n/g, '\n');
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
 
