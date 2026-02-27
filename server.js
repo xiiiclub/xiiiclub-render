@@ -36,7 +36,7 @@ const formattedText = text.replace(/\|/g, '\n');
     const maxWidth = 900;      // wrap width
     const lineHeight = 1.05;   // tighter luxury vibe
 
-    cconst html = `
+    const html = `
 <!doctype html>
 <html>
 <head>
@@ -107,6 +107,7 @@ const formattedText = text.replace(/\|/g, '\n');
 app.get("/", (_, res) => res.send("OK - use /render?text=..."));
 
 app.listen(PORT, () => console.log(`Render server running on :${PORT}`));
+
 
 
 
